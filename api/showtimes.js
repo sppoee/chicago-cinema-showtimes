@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const { q = 'movies in Chicago today', debug } = req.query;
 
   const params = new URLSearchParams({
-    engine:   'google',
+    engine:   'google_movies',
     q,
     location: 'Chicago, Illinois',
     hl:       'en',
