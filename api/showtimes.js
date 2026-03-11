@@ -11,14 +11,14 @@ export default async function handler(req, res) {
 
   const { q = 'movies in Chicago today', debug } = req.query;
 
-  const params = new URLSearchParams({
-    engine:   'google_movies',
-    q,
-    location: 'Chicago, Illinois',
-    hl:       'en',
-    gl:       'us',
-    api_key:  API_KEY,
-  });
+const params = new URLSearchParams({
+  engine:   'google',
+  q:        'movies playing in Chicago',
+  location: 'Chicago, Illinois, United States',
+  hl:       'en',
+  gl:       'us',
+  api_key:  API_KEY,
+});
 
   try {
     const response = await fetch(`https://serpapi.com/search.json?${params}`);
